@@ -1,7 +1,7 @@
 package emotions;
 
 import experiences.Experience;
-import math.ConvexSet;
+import math.Point;
 
 /**
  * Class to read and control emotions.
@@ -9,29 +9,29 @@ import math.ConvexSet;
  * @author Zak_b
  *
  */
-public class Heart {
-	private ConvexSet currentState;
+public interface Heart {
 
 	/**
 	 * Get current state. Represents how the heart feels at this moment.
 	 * 
 	 * @return current state
 	 */
-	public ConvexSet getState() {
-		return currentState;
-
-	}
+	public Point getState();
 
 	/**
-	 * Process the experience in a personal way. Very open ended to allow for a
-	 * wide range of reactions to experiences. One requirement is that as the
-	 * computer grows it learns new ways to process experiences.
+	 * Reports a version of how it is feeling that may be understood by humans.
+	 * 
+	 * @return A human-readable version of the heart's current state
+	 */
+	public String stateDescription();
+
+	/**
+	 * Process the experience, potentially changing the heart's current state.
 	 * 
 	 * @param experience
+	 *            The experience to process
 	 */
-	public void processExperience(Experience experience) {
-
-	}
+	public void processExperience(Experience experience);
 
 	/**
 	 * The heart is responsible for normalizing the convex set to ensure that
@@ -39,7 +39,5 @@ public class Heart {
 	 * is public because child classes may decide how they choose to normalize
 	 * the state.
 	 */
-	public void normalizeCurrentState() {
-
-	}
+	public void normalizeCurrentState();
 }

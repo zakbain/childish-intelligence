@@ -13,6 +13,11 @@ import experiences.Experience;
 public class Agent {
 	private Heart heart;
 
+	/**
+	 * Process the experience in a personal way. Very open ended to allow for a
+	 * wide range of reactions to experiences. One requirement is that as the
+	 * computer grows it learns new ways to process experiences.
+	 */
 	public static void Process(Experience experience) {
 
 	}
