@@ -1,4 +1,4 @@
-package experiences;
+package conscious;
 
 /**
  * Anything an agent can experience. This is deliberately left open ended as the

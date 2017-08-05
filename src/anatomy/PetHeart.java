@@ -1,9 +1,9 @@
-package emotions;
+package anatomy;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import experiences.Experience;
+import conscious.Experience;
 
 /**
  * The heart used by Pet Agent.
@@ -27,8 +27,11 @@ public class PetHeart implements Heart {
 	 */
 	private List<Integer> degreeOfExtremes;
 
+	/*
+	 * 
+	 */
 	private static void createExtremeEmotions() {
-
+		
 	}
 
 	/**

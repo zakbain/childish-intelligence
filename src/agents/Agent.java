@@ -1,7 +1,7 @@
 package agents;
 
-import emotions.Heart;
-import experiences.Experience;
+import anatomy.Heart;
+import conscious.Experience;
 
 /**
  * Agent that can navigate, process, and adapt to an environment while
