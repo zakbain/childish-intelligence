@@ -1,4 +1,4 @@
-package upperAgents;
+package agents;
 
 import emotions.Heart;
 import experiences.Experience;
