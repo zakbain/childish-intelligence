@@ -1,7 +1,6 @@
 package emotions;
 
 import experiences.Experience;
-import math.Point;
 
 /**
  * Class to read and control emotions.
@@ -12,14 +11,8 @@ import math.Point;
 public interface Heart {
 
 	/**
-	 * Get current state. Represents how the heart feels at this moment.
-	 * 
-	 * @return current state
-	 */
-	public Point getState();
-
-	/**
-	 * Reports a version of how it is feeling that may be understood by humans.
+	 * Reports how the heart is feeling in a way that may be understood by
+	 * humans.
 	 * 
 	 * @return A human-readable version of the heart's current state
 	 */
