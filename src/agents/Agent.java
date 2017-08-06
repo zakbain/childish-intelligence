@@ -1,6 +1,6 @@
 package agents;
 
-import conscious.Experience;
+import consciousness.Experience;
 
 /**
  * Agent that can navigate, process, and adapt to an environment while

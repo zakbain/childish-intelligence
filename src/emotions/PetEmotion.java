@@ -1,4 +1,4 @@
-package anatomy;
+package emotions;
 
 /**
  * An emotion unique to pets.

@@ -1,9 +1,9 @@
-package conscious;
+package consciousness;
 
 import java.util.List;
 import java.util.Queue;
 
-import anatomy.Heart;
+import emotions.Heart;
 
 /**
  * Responsible for controlling the memory and analysis of experiences.

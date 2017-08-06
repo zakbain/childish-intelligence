@@ -1,4 +1,4 @@
-package conscious;
+package consciousness;
 
 /**
  * An experience unique to pets.

@@ -1,11 +1,13 @@
 package agents;
 
-import anatomy.Heart;
-import anatomy.PetHeart;
-import conscious.Experience;
+import consciousness.Brain;
+import consciousness.Experience;
+import emotions.Heart;
+import emotions.PetHeart;
 
 public class PetAgent implements Agent {
 	private Heart petHeart;
+	private Brain petBrain;
 
 	/**
 	 * Very temporary. The int is a terrible way of distinguishing what type of

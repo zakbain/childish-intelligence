@@ -50,7 +50,7 @@ public class WritingHelper {
 	 */
 	public void write(String str) {
 		try {
-			// Wrtie the specified string
+			// Write the specified string
 			tolstoy.write(str);
 		} catch (IOException e) {
 			// Auto-generated catch block

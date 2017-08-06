@@ -1,4 +1,4 @@
-package anatomy;
+package emotions;
 
 import math.Point;
 

@@ -1,9 +1,9 @@
-package anatomy;
+package emotions;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import conscious.Experience;
+import consciousness.Experience;
 
 /**
  * The heart used by Pet Agent.

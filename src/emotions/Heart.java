@@ -1,6 +1,6 @@
-package anatomy;
+package emotions;
 
-import conscious.Experience;
+import consciousness.Experience;
 
 /**
  * Class to read and control emotions.
