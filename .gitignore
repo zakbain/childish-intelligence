@@ -5,4 +5,4 @@ tmp/
 .metadata
 .classpath
 .project
-.settings/*
+/.settings/*
