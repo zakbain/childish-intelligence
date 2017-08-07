@@ -49,12 +49,12 @@ public class Brain {
 	 * @param logFileName
 	 *            The log for recording the thoughts.
 	 */
-	public void thinkAbout(Thought startThought, Heart heart, int desiredThoughtCount, String logFileName) {
+	public void thinkAbout(Node<Thought> startThought, Heart heart, int desiredThoughtCount, String logFileName) {
 		// Log the thought we started thinking about
-		logWriter.writeLine("NEW THOUGHT: " + startThought.getDescription());
+		logWriter.writeLine("NEW THOUGHT: " + startThought.getValue().getDescription());
 
 		// Remember current thought for traversing below
-		Thought currentThought = startThought;
+		Node<Thought> currentThought = startThought;
 
 		// Number of thoughts we still have to think
 		int remainingThoughtCount = desiredThoughtCount;
@@ -68,7 +68,7 @@ public class Brain {
 	 * 
 	 * @param thought
 	 */
-	private Thought findStrongestConnectedThought(Thought thought) {
+	private Node<Thought> findStrongestConnectedThought(Node<Thought> thought) {
 		return null;
 	}
 
