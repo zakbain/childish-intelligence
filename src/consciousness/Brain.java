@@ -1,9 +1,11 @@
 package consciousness;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Set;
 
 import emotions.Heart;
 import io.WritingHelper;
@@ -51,7 +53,7 @@ public class Brain {
 	 */
 	public void thinkAbout(Node<Thought> startThought, Heart heart, int desiredThoughtCount, String logFileName) {
 		// Log the thought we started thinking about
-		logWriter.writeLine("NEW THOUGHT: " + startThought.getValue().getDescription());
+		logWriter.writeLine("NEW THOUGHT PROCESS: " + startThought.getValue().getDescription());
 
 		// Remember current thought for traversing below
 		Node<Thought> currentThought = startThought;
@@ -60,7 +62,16 @@ public class Brain {
 		int remainingThoughtCount = desiredThoughtCount;
 		while (remainingThoughtCount > 0) {
 			// Find a related thought
-			currentThought = findStrongestConnectedThought(currentThought);
+			currentThought = findRandomConnectedThought(currentThought);
+
+			if (currentThought == null) {
+				// If we found no connected thoughts, end the thought process
+				remainingThoughtCount = 0;
+			} else {
+				// If we found a connected thought, log it and continue
+				logWriter.write("\t" + currentThought.getValue().getDescription());
+				remainingThoughtCount--;
+			}
 		}
 	}
 
@@ -70,6 +81,29 @@ public class Brain {
 	 */
 	private Node<Thought> findStrongestConnectedThought(Node<Thought> thought) {
 		return null;
+	}
+
+	/**
+	 * Find a random thought that is connected to the given thought.
+	 * 
+	 * @param thought
+	 *            The thought node from which to start finding connections.
+	 * @return The connected thought that was discovered. NULL if no thought is
+	 *         found.
+	 */
+	private Node<Thought> findRandomConnectedThought(Node<Thought> thought) {
+		Node<Thought> randomConnectedThought = null;
+
+		// Get all nodes connected to this thought
+		Set<Node<Thought>> connectedNodes = thought.getEdges().keySet();
+
+		// If there is at least one node, designate it is as our random thought
+		Iterator<Node<Thought>> nodeIterator = connectedNodes.iterator();
+		if (nodeIterator.hasNext()) {
+			randomConnectedThought = nodeIterator.next();
+		}
+
+		return randomConnectedThought;
 	}
 
 	/**

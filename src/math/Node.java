@@ -18,9 +18,8 @@ public class Node<T> {
 	private T value;
 
 	/**
-	 * The weighted edges connecting the node with other nodes. The Key is the
-	 * node that this node connects to and the value is the weight of the
-	 * connection.
+	 * The weighted edges between this node and other nodes. The Key is the node
+	 * that this node connects to and the value is the weight.
 	 * 
 	 */
 	Map<Node<T>, Integer> edges;
@@ -34,15 +33,23 @@ public class Node<T> {
 	}
 
 	/**
-	 * Sets the connection from this node to the specified node with the
-	 * specified weight. If the connection already exists, the old edge weight
-	 * is replaced.
+	 * Sets the edge from this node to the specified node to have the specified
+	 * weight. If the edge already exists, the old edge weight is replaced.
 	 * 
 	 * @param node
 	 * @param weight
 	 */
-	public void setConnection(Node<T> node, int weight) {
+	public void setEdge(Node<T> node, int weight) {
 		edges.put(node, weight);
+	}
+
+	/**
+	 * Gives a reference to this node's edges.
+	 * 
+	 * @return
+	 */
+	public Map<Node<T>, Integer> getEdges() {
+		return this.edges;
 	}
 
 	/**
