@@ -112,7 +112,7 @@ public class Brain {
 	 * @param thought
 	 *            The thought to save
 	 */
-	public void save(Node<Thought> thought) {
+	public void saveThought(Node<Thought> thought) {
 		allThoughts.add(thought);
 	}
 
@@ -122,7 +122,7 @@ public class Brain {
 	 * 
 	 * Suggested Implementation: Make popular thoughts faster to access.
 	 */
-	public void savePopular(Node<Thought> thought) {
+	public void savePopularThought(Node<Thought> thought) {
 		allThoughts.add(thought);
 
 		// Add to popular thoughts list so we can access faster
