@@ -1,6 +1,6 @@
 package agents;
 
-import consciousness.Experience;
+import consciousness.Thought;
 
 /**
  * Agent that can navigate, process, and adapt to an environment while
@@ -12,9 +12,9 @@ import consciousness.Experience;
 public interface Agent {
 
 	/**
-	 * Process the experience in a personal way. Very open ended to allow for a
-	 * wide range of reactions to experiences. One requirement is that as the
-	 * computer grows it learns new ways to process experiences.
+	 * Process the thought in a personal way. Very open ended to allow for a
+	 * wide range of reactions to thoughts. One requirement is that as the
+	 * computer grows it learns new ways to process thoughts.
 	 */
-	public void Process(Experience experience);
+	public void Process(Thought thought);
 }

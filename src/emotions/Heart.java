@@ -1,6 +1,6 @@
 package emotions;
 
-import consciousness.Experience;
+import consciousness.Thought;
 
 /**
  * Class to read and control emotions.
@@ -19,12 +19,12 @@ public interface Heart {
 	public String stateDescription();
 
 	/**
-	 * Process the experience, potentially changing the heart's current state.
+	 * Process the thought, potentially changing the heart's current state.
 	 * 
-	 * @param experience
-	 *            The experience to process
+	 * @param thought
+	 *            The thought to process
 	 */
-	public void processExperience(Experience experience);
+	public void processThought(Thought thought);
 
 	/**
 	 * The heart is responsible for normalizing the convex set to ensure that

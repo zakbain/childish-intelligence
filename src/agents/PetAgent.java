@@ -1,7 +1,7 @@
 package agents;
 
 import consciousness.Brain;
-import consciousness.Experience;
+import consciousness.Thought;
 import emotions.Heart;
 import emotions.PetHeart;
 
@@ -19,7 +19,7 @@ public class PetAgent implements Agent {
 		petHeart = new PetHeart();
 	}
 
-	public void Process(Experience experience) {
+	public void Process(Thought thought) {
 
 	}
 }

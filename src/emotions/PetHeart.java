@@ -3,7 +3,7 @@ package emotions;
 import java.util.ArrayList;
 import java.util.List;
 
-import consciousness.Experience;
+import consciousness.Thought;
 
 /**
  * The heart used by Pet Agent.
@@ -31,7 +31,7 @@ public class PetHeart implements Heart {
 	 * 
 	 */
 	private static void createExtremeEmotions() {
-		
+
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class PetHeart implements Heart {
 	}
 
 	@Override
-	public void processExperience(Experience experience) {
+	public void processThought(Thought thought) {
 
 	}
 
