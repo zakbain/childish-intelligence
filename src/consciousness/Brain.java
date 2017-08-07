@@ -51,7 +51,7 @@ public class Brain {
 	 * @param logFileName
 	 *            The log for recording the thoughts.
 	 */
-	public void thinkAbout(Node<Thought> startThought, Heart heart, int desiredThoughtCount, String logFileName) {
+	public void startThoughtProcess(Node<Thought> startThought, Heart heart, int desiredThoughtCount, String logFileName) {
 		// Log the thought we started thinking about
 		logWriter.writeLine("NEW THOUGHT PROCESS: " + startThought.getValue().getDescription());
 
