@@ -5,7 +5,7 @@ package consciousness;
  * @author Zak_b
  *
  */
-public enum PetThoughtType {
+public enum PetMemoryType {
 	/*
 	 * Play
 	 */

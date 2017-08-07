@@ -1,7 +1,7 @@
 package consciousness;
 
 /**
- * An thought unique to pets.
+ * An memory unique to pets.
  * 
  * 8/5/17 - Ultimately, this class might be useless. I'd like thought to be a
  * very simple class with the complexity lying in how the brain and heart deal
@@ -10,21 +10,21 @@ package consciousness;
  * @author Zak_b
  *
  */
-public class PetThought extends Thought {
-	public PetThoughtType type;
+public class PetMemory extends Memory {
+	public PetMemoryType type;
 
 	/**
-	 * Construct PetThought by specifying the description, approximate time, and
+	 * Construct PetMemory by specifying the description, approximate time, and
 	 * the type of the pet thought.
 	 * 
 	 * @param description
-	 *            Description of the thought
+	 *            Description of the memory
 	 * @param approximateTime
-	 *            Approximate time of thought
+	 *            Approximate time of memory
 	 * @param type
-	 *            Type of thought
+	 *            Type of memory
 	 */
-	public PetThought(String description, ApproximateDate approximateTime, PetThoughtType type) {
+	public PetMemory(String description, ApproximateDate approximateTime, PetMemoryType type) {
 		super(description, approximateTime);
 
 		this.type = type;

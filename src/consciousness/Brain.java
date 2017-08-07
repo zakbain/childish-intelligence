@@ -7,6 +7,7 @@ import java.util.Queue;
 
 import emotions.Heart;
 import io.WritingHelper;
+import math.Node;
 
 /**
  * Responsible for controlling the memory and analysis of thoughts. The
@@ -19,19 +20,19 @@ public class Brain {
 	/**
 	 * A queue with every single thought ever thoughtd by this brain.
 	 */
-	private Queue<Thought> allThoughts;
+	private Queue<Node<Thought>> allThoughts;
 
 	/**
 	 * A list of thoughts the brain frequents.
 	 */
-	private List<Thought> popularThoughts;
+	private List<Node<Thought>> popularThoughts;
 
 	private WritingHelper logWriter;
 
 	public Brain(String logFileName) {
 		// Initialize member variables
-		allThoughts = new LinkedList<Thought>();
-		popularThoughts = new ArrayList<Thought>();
+		allThoughts = new LinkedList<Node<Thought>>();
+		popularThoughts = new ArrayList<Node<Thought>>();
 		logWriter = new WritingHelper(logFileName);
 	}
 
@@ -52,12 +53,23 @@ public class Brain {
 		// Log the thought we started thinking about
 		logWriter.writeLine("NEW THOUGHT: " + startThought.getDescription());
 
+		// Remember current thought for traversing below
+		Thought currentThought = startThought;
+
 		// Number of thoughts we still have to think
 		int remainingThoughtCount = desiredThoughtCount;
 		while (remainingThoughtCount > 0) {
 			// Find a related thought
-
+			currentThought = findStrongestConnectedThought(currentThought);
 		}
+	}
+
+	/**
+	 * 
+	 * @param thought
+	 */
+	private Thought findStrongestConnectedThought(Thought thought) {
+		return null;
 	}
 
 	/**
@@ -66,7 +78,7 @@ public class Brain {
 	 * @param thought
 	 *            The thought to save
 	 */
-	public void save(Thought thought) {
+	public void save(Node<Thought> thought) {
 		allThoughts.add(thought);
 	}
 
@@ -76,7 +88,7 @@ public class Brain {
 	 * 
 	 * Suggested Implementation: Make popular thoughts faster to access.
 	 */
-	public void savePopular(Thought thought) {
+	public void savePopular(Node<Thought> thought) {
 		allThoughts.add(thought);
 
 		// Add to popular thoughts list so we can access faster

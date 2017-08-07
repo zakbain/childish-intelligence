@@ -14,21 +14,13 @@ public class Thought {
 	private String description;
 
 	/**
-	 * When the thought happened
-	 */
-	private ApproximateDate approximateTime;
-
-	/**
-	 * Default Constructor.
+	 * Constructs a thought.
 	 * 
 	 * @param description
 	 *            A description of the thought.
-	 * @param approximateTime
-	 *            The approximate time of the thought.
 	 */
-	public Thought(String description, ApproximateDate approximateTime) {
+	public Thought(String description) {
 		this.description = description;
-		this.approximateTime = approximateTime;
 	}
 
 	/**
@@ -48,23 +40,5 @@ public class Thought {
 	 */
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	/**
-	 * Sets the approximate time.
-	 * 
-	 * @param approximateDate
-	 */
-	public void setApproximateTime(ApproximateDate approximateTime) {
-		this.approximateTime = approximateTime;
-	}
-
-	/**
-	 * Reports the approximate time.
-	 * 
-	 * @return the time.
-	 */
-	public ApproximateDate getApproximateTime() {
-		return approximateTime;
 	}
 }
