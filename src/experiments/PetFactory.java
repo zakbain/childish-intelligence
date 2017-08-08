@@ -32,11 +32,11 @@ public class PetFactory {
 		Agent libra = new PetAgent(0, brainLog);
 		Agent venus = new PetAgent(1, brainLog);
 
-		List<Thought> randomThoughts = createRandomThoughts(20);
+		List<Thought> randomThoughts = createRandomThoughts(15);
 		for (Thought thought : randomThoughts) {
 			libra.process(thought);
 		}
 
-		libra.startRandomThoughtProcess(5);
+		libra.startRandomThoughtProcess(12);
 	}
 }

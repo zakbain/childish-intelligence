@@ -1,7 +1,6 @@
 package io;
 
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -24,21 +23,19 @@ public class WritingHelper {
 	private BufferedWriter tolstoy;
 
 	/**
+	 * The name of the file where things will be written. This is saved so that
+	 * we can open and close the writer repeatedly.
+	 */
+	private String filename;
+
+	/**
 	 * Default constructor
 	 * 
 	 * @param filename
+	 *            The name of the file where WritingHelper will write.
 	 */
 	public WritingHelper(String filename) {
-		try {
-			// Create an output stream for the given file.
-			OutputStream fileOut = new FileOutputStream(filename);
-
-			// Boy can Tolstoy write. Let's give him the tools to do it
-			this.tolstoy = new BufferedWriter(new OutputStreamWriter(fileOut));
-		} catch (FileNotFoundException e) {
-			// Auto generated
-			e.printStackTrace();
-		}
+		this.filename = filename;
 
 	}
 
@@ -76,10 +73,27 @@ public class WritingHelper {
 	}
 
 	/**
-	 * Closes the writer
+	 * Prepare the writing helper to be ready to write.
 	 */
-	public void closeWriter() {
+	public void startWriting() {
 		try {
+			// Create an output stream for the given file.
+			OutputStream fileOut = new FileOutputStream(this.filename);
+
+			// Boy can Tolstoy write. Let's give him the tools to do it
+			this.tolstoy = new BufferedWriter(new OutputStreamWriter(fileOut));
+		} catch (IOException e) {
+			// Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Allow the writing helper some rest from its tireless writing.
+	 */
+	public void stopWriting() {
+		try {
+			// Put the pen down. War and Peace is long enough
 			this.tolstoy.close();
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -58,6 +58,8 @@ public class Brain {
 	 *            The log for recording the thoughts.
 	 */
 	public void startThoughtProcess(Node<Thought> startThought, Heart heart, int desiredThoughtCount) {
+		logWriter.startWriting();
+
 		// Log the thought we started thinking about
 		logWriter.writeLine("NEW THOUGHT PROCESS: " + startThought.getValue().getDescription());
 
@@ -80,7 +82,7 @@ public class Brain {
 			}
 		}
 
-		logWriter.closeWriter();
+		logWriter.stopWriting();
 	}
 
 	/**
