@@ -1,5 +1,7 @@
 package agents;
 
+import java.util.Random;
+
 import consciousness.Brain;
 import consciousness.Thought;
 import emotions.Heart;
@@ -31,15 +33,55 @@ public class PetAgent implements Agent {
 		petBrain = new Brain(logFileName);
 	}
 
-	public void Process(Thought thought) {
+	/**
+	 * Process a thought that occurs to this agent.
+	 * 
+	 * @param thought
+	 *            The thought to process
+	 */
+	public void process(Thought thought) {
 		// Create a node with relevant connections
 		Node<Thought> thoughtNode = createNode(thought);
 
+		// Save the new thoughtin the brain
 		petBrain.saveThought(thoughtNode);
 		petBrain.savePopularThought(thoughtNode);
 	}
 
+	/**
+	 * Create a new node with the specified thought.
+	 * 
+	 * @param thought
+	 *            The thought from which to create a node
+	 * @return
+	 */
 	public Node<Thought> createNode(Thought thought) {
-		return null;
+		Node<Thought> thoughtNode = new Node<Thought>();
+		thoughtNode.setValue(thought);
+
+		/**
+		 * For now, pick a random weight and create an edge pointing from the
+		 * recent thought to the new thought.
+		 */
+		Integer randomWeight = new Random().nextInt(1);
+
+		if (recentThought != null) {
+			recentThought.setEdge(thoughtNode, randomWeight);
+		}
+
+		recentThought = thoughtNode;
+
+		return thoughtNode;
+	}
+
+	/**
+	 * Agent thinks a random number of thoughts.
+	 * 
+	 * @param desiredThoughtCount
+	 *            The desired number of thoughts
+	 * 
+	 */
+	public void startRandomThoughtProcess(int desiredThoughtCount) {
+		petBrain.startRandomThoughtProcess(this.petHeart, desiredThoughtCount);
 	}
 }

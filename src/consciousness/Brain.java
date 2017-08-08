@@ -29,6 +29,12 @@ public class Brain {
 	 */
 	private List<Node<Thought>> popularThoughts;
 
+	/**
+	 * Helper to write logs.
+	 * 
+	 * @note 8-7: most likely will be removed to fix vulnerability of having
+	 *       open log
+	 */
 	private WritingHelper logWriter;
 
 	public Brain(String logFileName) {
@@ -51,7 +57,7 @@ public class Brain {
 	 * @param logFileName
 	 *            The log for recording the thoughts.
 	 */
-	public void startThoughtProcess(Node<Thought> startThought, Heart heart, int desiredThoughtCount, String logFileName) {
+	public void startThoughtProcess(Node<Thought> startThought, Heart heart, int desiredThoughtCount) {
 		// Log the thought we started thinking about
 		logWriter.writeLine("NEW THOUGHT PROCESS: " + startThought.getValue().getDescription());
 
@@ -73,6 +79,8 @@ public class Brain {
 				remainingThoughtCount--;
 			}
 		}
+
+		logWriter.closeWriter();
 	}
 
 	/**
@@ -118,14 +126,24 @@ public class Brain {
 
 	/**
 	 * Save an thought in memory, but handle it specially because it is popular.
-	 * MOST LIKELY WILL BE DELETED.
 	 * 
-	 * Suggested Implementation: Make popular thoughts faster to access.
+	 * @NOTE 8-7: most likely will be deleted or reworked.
+	 * 
+	 *       Suggested Implementation: Make popular thoughts faster to access.
 	 */
 	public void savePopularThought(Node<Thought> thought) {
 		allThoughts.add(thought);
 
 		// Add to popular thoughts list so we can access faster
 		popularThoughts.add(thought);
+	}
+
+	/**
+	 * Start a random thought process from one of the popular thoughts.
+	 * 
+	 * @NOTE 8-7: For testing purposes. Will most likely be deleted
+	 */
+	public void startRandomThoughtProcess(Heart heart, int desiredThoughtCount) {
+		this.startThoughtProcess(popularThoughts.get(0), heart, desiredThoughtCount);
 	}
 }

@@ -16,5 +16,7 @@ public interface Agent {
 	 * wide range of reactions to thoughts. One requirement is that as the
 	 * computer grows it learns new ways to process thoughts.
 	 */
-	public void Process(Thought thought);
+	public void process(Thought thought);
+
+	public void startRandomThoughtProcess(int desiredThoughtCount);
 }

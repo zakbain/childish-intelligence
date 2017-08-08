@@ -74,4 +74,15 @@ public class WritingHelper {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Closes the writer
+	 */
+	public void closeWriter() {
+		try {
+			this.tolstoy.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
