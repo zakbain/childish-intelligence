@@ -4,6 +4,9 @@ SYNOPSIS
 
 An attempt to tackle the problem of Artificial Intelligence by giving the AI great levels of freedom and nurturing it to greatness.
 
+RUNNING PROGRAM
+	As of 8-9-17, running the program will run PetFactory which prints brain thoughts into brainLog.log
+
 IMPORTANT PACKAGES AND CLASSES
 
 Agents - Contains the agent classes which are drivers for this project. 
