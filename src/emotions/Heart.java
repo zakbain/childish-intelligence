@@ -1,5 +1,6 @@
 package emotions;
 
+import anatomy.BodyPart;
 import consciousness.Thought;
 
 /**
@@ -8,7 +9,7 @@ import consciousness.Thought;
  * @author Zak_b
  *
  */
-public interface Heart {
+public interface Heart extends BodyPart {
 
 	/**
 	 * Reports how the heart is feeling in a way that may be understood by

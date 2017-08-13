@@ -3,6 +3,7 @@ package agents;
 import java.util.Random;
 
 import consciousness.Brain;
+import consciousness.PetBrain;
 import consciousness.Thought;
 import emotions.Heart;
 import emotions.PetHeart;
@@ -30,7 +31,7 @@ public class PetAgent implements Agent {
 	 */
 	public PetAgent(int i, String logFileName) {
 		petHeart = new PetHeart();
-		petBrain = new Brain(logFileName);
+		petBrain = new PetBrain(logFileName);
 	}
 
 	/**
@@ -45,7 +46,6 @@ public class PetAgent implements Agent {
 
 		// Save the new thoughtin the brain
 		petBrain.saveThought(thoughtNode);
-		petBrain.savePopularThought(thoughtNode);
 	}
 
 	/**

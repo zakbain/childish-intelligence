@@ -17,7 +17,7 @@ public class PetHeart implements Heart {
 	 * as happy or sad is meant to represent the maximum potential feeling of
 	 * happiness or sadness
 	 */
-	private static List<Emotion> extremeEmotions;
+	private List<Emotion> extremeEmotions;
 
 	/**
 	 * A list to describe the degree with which each emotion is felt. 0 means
@@ -27,10 +27,44 @@ public class PetHeart implements Heart {
 	 */
 	private List<Integer> degreeOfExtremes;
 
-	/*
-	 * 
+	/**
+	 * Chemicals that may be
 	 */
-	private static void createExtremeEmotions() {
+	private List<Integer> heartChemicals;
+
+	/**
+	 * Create sadness, happiness, anger, and fear. Put the four emotions at 4
+	 * corners of plane to create a diamond. This is just to create a sexy
+	 * visual.
+	 */
+	private void createExtremeEmotions() {
+		extremeEmotions = new ArrayList<Emotion>();
+
+		Emotion maxSadness = new Emotion(0, -1);
+		extremeEmotions.add(maxSadness);
+
+		Emotion maxHappiness = new Emotion(0, 1);
+		extremeEmotions.add(maxHappiness);
+
+		Emotion maxAnger = new Emotion(1, 0);
+		extremeEmotions.add(maxAnger);
+
+		Emotion maxFear = new Emotion(-1, 0);
+		extremeEmotions.add(maxFear);
+	}
+
+	private void createStartDegrees() {
+		degreeOfExtremes = new ArrayList<Integer>();
+		for (int i = 0; i < extremeEmotions.size(); i++) {
+
+		}
+	}
+
+	private void createHeartChemicals() {
+
+	}
+
+	private void addHeartChemical() {
 
 	}
 
@@ -38,7 +72,8 @@ public class PetHeart implements Heart {
 	 * Default constructor for the pet heart.
 	 */
 	public PetHeart() {
-		extremeEmotions = new ArrayList<Emotion>();
+		createExtremeEmotions();
+		createStartDegrees();
 	}
 
 	@Override

@@ -1,14 +1,7 @@
 package consciousness;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Set;
-
+import anatomy.BodyPart;
 import emotions.Heart;
-import io.WritingHelper;
 import math.Node;
 
 /**
@@ -18,32 +11,7 @@ import math.Node;
  * @author Zak_b
  *
  */
-public class Brain {
-	/**
-	 * A queue with every single thought ever thoughtd by this brain.
-	 */
-	private Queue<Node<Thought>> allThoughts;
-
-	/**
-	 * A list of thoughts the brain frequents.
-	 */
-	private List<Node<Thought>> popularThoughts;
-
-	/**
-	 * Helper to write logs.
-	 * 
-	 * @note 8-7: most likely will be removed to fix vulnerability of having
-	 *       open log
-	 */
-	private WritingHelper logWriter;
-
-	public Brain(String logFileName) {
-		// Initialize member variables
-		allThoughts = new LinkedList<Node<Thought>>();
-		popularThoughts = new ArrayList<Node<Thought>>();
-		logWriter = new WritingHelper(logFileName);
-	}
-
+public interface Brain extends BodyPart {
 	/**
 	 * Think about an thought. Interact with the heart to guide our thinking.
 	 * Log thoughts into the specified log.
@@ -57,64 +25,7 @@ public class Brain {
 	 * @param logFileName
 	 *            The log for recording the thoughts.
 	 */
-	public void startThoughtProcess(Node<Thought> startThought, Heart heart, int desiredThoughtCount) {
-		logWriter.startWriting();
-
-		// Log the thought we started thinking about
-		logWriter.writeLine("NEW THOUGHT PROCESS: " + startThought.getValue().getDescription());
-
-		// Remember current thought for traversing below
-		Node<Thought> currentThought = startThought;
-
-		// Number of thoughts we still have to think
-		int remainingThoughtCount = desiredThoughtCount;
-		while (remainingThoughtCount > 0) {
-			// Find a related thought
-			currentThought = findRandomConnectedThought(currentThought);
-
-			if (currentThought == null) {
-				// If we found no connected thoughts, end the thought process
-				remainingThoughtCount = 0;
-			} else {
-				// If we found a connected thought, log it and continue
-				logWriter.write("\t" + currentThought.getValue().getDescription());
-				remainingThoughtCount--;
-			}
-		}
-
-		logWriter.stopWriting();
-	}
-
-	/**
-	 * 
-	 * @param thought
-	 */
-	private Node<Thought> findStrongestConnectedThought(Node<Thought> thought) {
-		return null;
-	}
-
-	/**
-	 * Find a random thought that is connected to the given thought.
-	 * 
-	 * @param thought
-	 *            The thought node from which to start finding connections.
-	 * @return The connected thought that was discovered. NULL if no thought is
-	 *         found.
-	 */
-	private Node<Thought> findRandomConnectedThought(Node<Thought> thought) {
-		Node<Thought> randomConnectedThought = null;
-
-		// Get all nodes connected to this thought
-		Set<Node<Thought>> connectedNodes = thought.getEdges().keySet();
-
-		// If there is at least one node, designate it is as our random thought
-		Iterator<Node<Thought>> nodeIterator = connectedNodes.iterator();
-		if (nodeIterator.hasNext()) {
-			randomConnectedThought = nodeIterator.next();
-		}
-
-		return randomConnectedThought;
-	}
+	public void startThoughtProcess(Node<Thought> startThought, Heart heart, int desiredThoughtCount);
 
 	/**
 	 * Save the thought in memory.
@@ -122,30 +33,12 @@ public class Brain {
 	 * @param thought
 	 *            The thought to save
 	 */
-	public void saveThought(Node<Thought> thought) {
-		allThoughts.add(thought);
-	}
-
-	/**
-	 * Save an thought in memory, but handle it specially because it is popular.
-	 * 
-	 * @NOTE 8-7: most likely will be deleted or reworked.
-	 * 
-	 *       Suggested Implementation: Make popular thoughts faster to access.
-	 */
-	public void savePopularThought(Node<Thought> thought) {
-		allThoughts.add(thought);
-
-		// Add to popular thoughts list so we can access faster
-		popularThoughts.add(thought);
-	}
+	public void saveThought(Node<Thought> thought);
 
 	/**
 	 * Start a random thought process from one of the popular thoughts.
 	 * 
 	 * @NOTE 8-7: For testing purposes. Will most likely be deleted
 	 */
-	public void startRandomThoughtProcess(Heart heart, int desiredThoughtCount) {
-		this.startThoughtProcess(popularThoughts.get(0), heart, desiredThoughtCount);
-	}
+	public void startRandomThoughtProcess(Heart heart, int desiredThoughtCount);
 }
