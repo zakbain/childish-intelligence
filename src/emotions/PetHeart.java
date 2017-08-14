@@ -38,6 +38,7 @@ public class PetHeart implements Heart {
 	 * visual.
 	 */
 	private void createExtremeEmotions() {
+		// Init
 		extremeEmotions = new ArrayList<Emotion>();
 
 		Emotion maxSadness = new Emotion(0, -1);
