@@ -18,8 +18,12 @@ public class PetFactory {
 		List<Thought> randomThoughts = new ArrayList<Thought>(count);
 
 		// Create a list of thoughts using the iterator for unique names
-		for (int i = 0; i < count; i++) {
-			randomThoughts.add(new Thought("Thought" + i));
+		for (int i = 0; i < count; i += 2) {
+			randomThoughts.add(new Thought("Pet woo " + i));
+		}
+
+		for (int i = 1; i < count; i += 2) {
+			randomThoughts.add(new Thought("Scold woo " + i));
 		}
 
 		return randomThoughts;

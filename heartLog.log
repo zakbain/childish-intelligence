@@ -1,90 +1,90 @@
-Heart: Thought0
+Heart: Pet woo 0
 	Before Happiness: 0.0
 	Before Certainty: 0.0
-Heart: Thought0
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought1
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought1
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought2
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought2
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought3
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought3
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought4
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought4
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought5
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought5
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought6
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought6
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought7
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought7
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought8
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought8
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought9
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought9
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought10
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought10
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought11
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought11
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought12
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought12
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought13
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought13
-	After Happiness: 0.0
-	After Certainty: 0.0
-Heart: Thought14
-	Before Happiness: 0.0
-	Before Certainty: 0.0
-Heart: Thought14
-	After Happiness: 0.0
-	After Certainty: 0.0
+Heart: Pet woo 0
+	After Happiness: 0.1
+	After Certainty: 0.1
+Heart: Pet woo 2
+	Before Happiness: 0.1
+	Before Certainty: 0.1
+Heart: Pet woo 2
+	After Happiness: 0.19
+	After Certainty: 0.19
+Heart: Pet woo 4
+	Before Happiness: 0.19
+	Before Certainty: 0.19
+Heart: Pet woo 4
+	After Happiness: 0.271
+	After Certainty: 0.271
+Heart: Pet woo 6
+	Before Happiness: 0.271
+	Before Certainty: 0.271
+Heart: Pet woo 6
+	After Happiness: 0.34390000000000004
+	After Certainty: 0.34390000000000004
+Heart: Pet woo 8
+	Before Happiness: 0.34390000000000004
+	Before Certainty: 0.34390000000000004
+Heart: Pet woo 8
+	After Happiness: 0.40951000000000004
+	After Certainty: 0.40951000000000004
+Heart: Pet woo 10
+	Before Happiness: 0.40951000000000004
+	Before Certainty: 0.40951000000000004
+Heart: Pet woo 10
+	After Happiness: 0.46855900000000006
+	After Certainty: 0.46855900000000006
+Heart: Pet woo 12
+	Before Happiness: 0.46855900000000006
+	Before Certainty: 0.46855900000000006
+Heart: Pet woo 12
+	After Happiness: 0.5217031000000001
+	After Certainty: 0.5217031000000001
+Heart: Pet woo 14
+	Before Happiness: 0.5217031000000001
+	Before Certainty: 0.5217031000000001
+Heart: Pet woo 14
+	After Happiness: 0.5695327900000001
+	After Certainty: 0.5695327900000001
+Heart: Scold woo 1
+	Before Happiness: 0.5695327900000001
+	Before Certainty: 0.5695327900000001
+Heart: Scold woo 1
+	After Happiness: 0.5264860690000002
+	After Certainty: 0.5264860690000002
+Heart: Scold woo 3
+	Before Happiness: 0.5264860690000002
+	Before Certainty: 0.5264860690000002
+Heart: Scold woo 3
+	After Happiness: 0.4791346759000002
+	After Certainty: 0.4791346759000002
+Heart: Scold woo 5
+	Before Happiness: 0.4791346759000002
+	Before Certainty: 0.4791346759000002
+Heart: Scold woo 5
+	After Happiness: 0.4270481434900002
+	After Certainty: 0.4270481434900002
+Heart: Scold woo 7
+	Before Happiness: 0.4270481434900002
+	Before Certainty: 0.4270481434900002
+Heart: Scold woo 7
+	After Happiness: 0.3697529578390002
+	After Certainty: 0.3697529578390002
+Heart: Scold woo 9
+	Before Happiness: 0.3697529578390002
+	Before Certainty: 0.3697529578390002
+Heart: Scold woo 9
+	After Happiness: 0.30672825362290024
+	After Certainty: 0.30672825362290024
+Heart: Scold woo 11
+	Before Happiness: 0.30672825362290024
+	Before Certainty: 0.30672825362290024
+Heart: Scold woo 11
+	After Happiness: 0.23740107898519025
+	After Certainty: 0.23740107898519025
+Heart: Scold woo 13
+	Before Happiness: 0.23740107898519025
+	Before Certainty: 0.23740107898519025
+Heart: Scold woo 13
+	After Happiness: 0.16114118688370926
+	After Certainty: 0.16114118688370926

@@ -66,7 +66,7 @@ public class PetHeart implements Heart {
 			this.happiness.increaseDegree(happDiff * BASE_INCREMENT);
 
 			double certDiff = 1.0 - this.certainty.getDegree();
-			this.happiness.increaseDegree(certDiff * BASE_INCREMENT);
+			this.certainty.increaseDegree(certDiff * BASE_INCREMENT);
 		} else if (command.equals("Scold")) {
 
 			// Decrease happiness and certainty
@@ -74,7 +74,7 @@ public class PetHeart implements Heart {
 			this.happiness.increaseDegree(-1 * happDeg * BASE_INCREMENT);
 
 			double certDeg = 1.0 - this.certainty.getDegree();
-			this.happiness.increaseDegree(-1 * certDeg * BASE_INCREMENT);
+			this.certainty.increaseDegree(-1 * certDeg * BASE_INCREMENT);
 		}
 
 		// Print heart status after thought
