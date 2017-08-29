@@ -7,5 +7,5 @@ package anatomy;
  * 
  */
 public enum SignalType {
-	INSTRUCTION, MESSAGE
+	INSTRUCTION, STATUS
 }

@@ -1,8 +1,7 @@
 package emotions;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import anatomy.Signal;
+import anatomy.SignalType;
 import consciousness.Thought;
 
 /**
@@ -12,83 +11,53 @@ import consciousness.Thought;
  *
  */
 public class PetHeart implements Heart {
-	/**
-	 * The list of emotional extremes. As in each emotion held in this list such
-	 * as happy or sad is meant to represent the maximum potential feeling of
-	 * happiness or sadness
-	 */
-	private List<Emotion> extremeEmotions;
+	private static double BASE_INCREMENT = 0.1;
 
 	/**
-	 * A list to describe the degree with which each emotion is felt. 0 means
-	 * the heart is feeling none of that emotion and 1 would mean they are
-	 * feeling only that emotion. As of 8/4/17, we do not allow a degree to be 0
-	 * or 1.
+	 * The degree of happiness
 	 */
-	private List<Integer> degreeOfExtremes;
+	private Emotion happiness;
 
 	/**
-	 * Chemicals that may be
+	 * The degree of certainty
 	 */
-	private List<Integer> heartChemicals;
-
-	/**
-	 * Create sadness, happiness, anger, and fear. Put the four emotions at 4
-	 * corners of plane to create a diamond. This is just to create a sexy
-	 * visual.
-	 */
-	private void createExtremeEmotions() {
-		// Init
-		extremeEmotions = new ArrayList<Emotion>();
-
-		Emotion maxSadness = new Emotion(0, -1);
-		extremeEmotions.add(maxSadness);
-
-		Emotion maxHappiness = new Emotion(0, 1);
-		extremeEmotions.add(maxHappiness);
-
-		Emotion maxAnger = new Emotion(1, 0);
-		extremeEmotions.add(maxAnger);
-
-		Emotion maxFear = new Emotion(-1, 0);
-		extremeEmotions.add(maxFear);
-	}
-
-	private void createStartDegrees() {
-		degreeOfExtremes = new ArrayList<Integer>();
-		for (int i = 0; i < extremeEmotions.size(); i++) {
-
-		}
-	}
-
-	private void createHeartChemicals() {
-
-	}
-
-	private void addHeartChemical() {
-
-	}
+	private Emotion certainty;
 
 	/**
 	 * Default constructor for the pet heart.
 	 */
 	public PetHeart() {
-		createExtremeEmotions();
-		createStartDegrees();
+		this.happiness = new Emotion("Happiness");
+		this.certainty = new Emotion("Certainty");
 	}
 
 	@Override
-	public String stateDescription() {
-		return "Fucked";
+	public Signal stateDescription() {
+		return new Signal(SignalType.STATUS, "Fucked");
 	}
 
 	@Override
 	public void processThought(Thought thought) {
+		// Quite hardcoded. For now part 1 is the command
+		String[] descSplit = thought.getDescription().split(" ");
+		String command = descSplit[0];
 
-	}
+		if (command.equals("Pet")) {
+			// Increase happiness and certainty
+			double happDiff = 1.0 - this.happiness.getDegree();
+			this.happiness.increaseDegree(happDiff * BASE_INCREMENT);
 
-	@Override
-	public void normalizeCurrentState() {
+			double certDiff = 1.0 - this.certainty.getDegree();
+			this.happiness.increaseDegree(certDiff * BASE_INCREMENT);
+		} else if (command.equals("Scold")) {
+
+			// Decrease happiness and certainty
+			double happDeg = 1.0 - this.happiness.getDegree();
+			this.happiness.increaseDegree(-1 * happDeg * BASE_INCREMENT);
+
+			double certDeg = 1.0 - this.certainty.getDegree();
+			this.happiness.increaseDegree(-1 * certDeg * BASE_INCREMENT);
+		}
 
 	}
 }

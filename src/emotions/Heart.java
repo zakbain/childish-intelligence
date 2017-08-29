@@ -1,6 +1,7 @@
 package emotions;
 
 import anatomy.BodyPart;
+import anatomy.Signal;
 import consciousness.Thought;
 
 /**
@@ -17,7 +18,7 @@ public interface Heart extends BodyPart {
 	 * 
 	 * @return A human-readable version of the heart's current state
 	 */
-	public String stateDescription();
+	public Signal stateDescription();
 
 	/**
 	 * Process the thought, potentially changing the heart's current state.
@@ -26,12 +27,4 @@ public interface Heart extends BodyPart {
 	 *            The thought to process
 	 */
 	public void processThought(Thought thought);
-
-	/**
-	 * The heart is responsible for normalizing the convex set to ensure that
-	 * the current state is within the bounds of the convex set. This function
-	 * is public because child classes may decide how they choose to normalize
-	 * the state.
-	 */
-	public void normalizeCurrentState();
 }

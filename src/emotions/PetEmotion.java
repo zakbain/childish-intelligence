@@ -12,7 +12,7 @@ package emotions;
  */
 public class PetEmotion extends Emotion {
 
-	public PetEmotion(int x, int y) {
-		super(x, y);
+	public PetEmotion(String description) {
+		super(description);
 	}
 }
