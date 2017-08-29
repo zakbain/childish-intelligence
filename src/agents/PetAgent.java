@@ -29,9 +29,9 @@ public class PetAgent implements Agent {
 	 * 
 	 * @param i
 	 */
-	public PetAgent(int i, String logFileName) {
-		petHeart = new PetHeart();
-		petBrain = new PetBrain(logFileName);
+	public PetAgent(int i, String heartLogFileName, String brainLogFileName) {
+		petHeart = new PetHeart(heartLogFileName);
+		petBrain = new PetBrain(brainLogFileName);
 	}
 
 	/**
@@ -44,8 +44,9 @@ public class PetAgent implements Agent {
 		// Create a node with relevant connections
 		Node<Thought> thoughtNode = createNode(thought);
 
-		// Save the new thoughtin the brain
+		// Save the new thought in the brain
 		petBrain.saveThought(thoughtNode);
+		petHeart.processThought(thought);
 	}
 
 	/**

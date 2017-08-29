@@ -15,6 +15,12 @@ import java.io.OutputStreamWriter;
 public class WritingHelper {
 
 	/**
+	 * Whether this class has written the file yet. Helps with deciding override
+	 * vs append.
+	 */
+	private boolean hasWritten;
+
+	/**
 	 * Our esteemed writer.
 	 * 
 	 * Please if you have strong feelings about War and Peace contact me at
@@ -78,7 +84,10 @@ public class WritingHelper {
 	public void startWriting() {
 		try {
 			// Create an output stream for the given file.
-			OutputStream fileOut = new FileOutputStream(this.filename);
+			OutputStream fileOut = new FileOutputStream(this.filename, hasWritten);
+			if (!hasWritten) {
+				hasWritten = true;
+			}
 
 			// Boy can Tolstoy write. Let's give him the tools to do it
 			this.tolstoy = new BufferedWriter(new OutputStreamWriter(fileOut));

@@ -99,10 +99,19 @@ public class PetBrain implements Brain {
 
 	@Override
 	public void saveThought(Node<Thought> thought) {
+		logWriter.startWriting();
+
+		// let em know we're in the brain
+		logWriter.writeLine("Brain: " + thought.getValue().getDescription());
+
+		// Add to all thoughts and report
+		logWriter.writeLine("\t Added to all thoughts.");
 		allThoughts.add(thought);
 
-		// Add to popular thoughts list so we can access faster
+		// Always add to popular thoughts and report
 		popularThoughts.add(thought);
+		logWriter.writeLine("\t Added to popular thoughts.");
+		logWriter.stopWriting();
 	}
 
 	@Override

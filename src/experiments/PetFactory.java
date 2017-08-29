@@ -27,10 +27,11 @@ public class PetFactory {
 
 	public static void main(String[] args) {
 		String brainLog = "brainLog.log";
+		String heartLog = "heartLog.log";
 
 		// Hack together a quick pet AI
-		Agent libra = new PetAgent(0, brainLog);
-		Agent venus = new PetAgent(1, brainLog);
+		Agent libra = new PetAgent(0, heartLog, brainLog);
+		Agent venus = new PetAgent(1, heartLog, brainLog);
 
 		List<Thought> randomThoughts = createRandomThoughts(15);
 		for (Thought thought : randomThoughts) {
